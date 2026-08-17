@@ -77,3 +77,10 @@ In future versions:
 - ML team outputs such as SVM, Random Forest, PCA, KMeans, and CNN will be integrated.
 - GTZAN dataset will replace dummy songs.
 - Audio preview and real playlist generation will be added.
+
+
+
+
+## 📸 Project Screenshots & 🎥 Demo
+
+[View Screenshots & Demo](https://drive.google.com/drive/folders/1G8xnTE_yCt76wJAIgogv9aNpiLJ5h2US?usp=drive_link)
