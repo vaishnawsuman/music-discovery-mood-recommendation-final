@@ -1,24 +1,46 @@
-# Frontend README
+# Music Discovery and Mood-Based Recommendation App
 
-This frontend is a beginner-friendly React + Vite UI for the Module D mood-based recommendation system.
+A React + Vite frontend for the Module D mood-based music recommendation system.
+
+## Team Members
+
+- Nitesh Kumar Mehta
+- Dipesh Kumar Mehta
+- Vaishnaw Suman
+- Harsh Rasaniya
 
 ## Features
-- Home page with mood input box
-- Generate Playlist button
-- Recommendation page showing mood, genre, tempo, description and songs
-- Axios used to call the FastAPI backend
 
-## Run locally
+- Home page with mood input
+- Mood AI interface
+- Discover music
+- Recommendations page
+- Favorites
+- Recently Played
+- Genre exploration
+- Playlist and music player UI
+- Theme customization
 
-1. Open a terminal inside this folder.
-2. Install dependencies:
+## Tech Stack
 
-   npm install
+- React
+- Vite
+- Python
+- FastAPI
+- Scikit-learn
+- Gemini API
 
-3. Start the development server:
+## Dataset
 
-   npm run dev
+GTZAN Genre Collection
 
-4. Open the app in your browser:
+## Project Flow
 
-   http://127.0.0.1:5173
+User Mood → Gemini API → Mood/Genre/Tempo Constraints → Recommendation System → Personalized Playlist
+
+## Run Locally
+
+Install dependencies:
+
+```bash
+npm install
