@@ -19,7 +19,7 @@ except ImportError:  # pragma: no cover - optional dependency outside local setu
 
 load_dotenv(Path(__file__).resolve().parents[1] / ".env")
 
-MODEL_NAME = os.getenv("GEMINI_MODEL", "gemini-3.6-flash")
+MODEL_NAME = os.getenv("GEMINI_MODEL", "gemini-3.5-flash")
 SUPPORTED_GENRES = ("Pop", "Rock", "Classical", "Jazz", "Dance")
 TEMPOS = ("Slow", "Medium", "Fast", "Very Fast")
 ENERGY_LEVELS = ("Low", "Medium", "High")
