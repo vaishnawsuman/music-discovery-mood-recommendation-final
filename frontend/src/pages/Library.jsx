@@ -154,26 +154,12 @@ export default function Library({ onNavigate }) {
         ))}
         {/* Add new placeholder */}
         <div
-          style={{
-            background: 'var(--bg-card)',
-            border: '2px dashed var(--border)',
-            borderRadius: 'var(--radius-lg)',
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            justifyContent: 'center',
-            aspectRatio: '1 / 1.3',
-            cursor: 'pointer',
-            transition: 'var(--transition)',
-            gap: 8,
-            color: 'var(--text-muted)',
-          }}
+          className="create-playlist-placeholder"
           onClick={() => setShowCreate(true)}
-          onMouseEnter={e => { e.currentTarget.style.borderColor = 'var(--accent)'; e.currentTarget.style.color = 'var(--accent)'; }}
-          onMouseLeave={e => { e.currentTarget.style.borderColor = 'var(--border)'; e.currentTarget.style.color = 'var(--text-muted)'; }}
+          title="Create New Playlist"
         >
-          <span style={{ fontSize: 32 }}>+</span>
-          <span style={{ fontSize: 13, fontWeight: 600 }}>Create New Playlist</span>
+          <div className="create-playlist-placeholder-icon">+</div>
+          <span className="create-playlist-placeholder-text">Create Playlist</span>
         </div>
       </div>
 

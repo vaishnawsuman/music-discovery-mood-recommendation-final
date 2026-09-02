@@ -54,9 +54,6 @@ export default function MoodAI({ onGenerate, initialText = '' }) {
       applyMoodTheme('sleep');
     }
 
-    // Existing loading behavior
-    await new Promise(r => setTimeout(r, 1200));
-
     setLoading(false);
 
     // Send mood to App.jsx

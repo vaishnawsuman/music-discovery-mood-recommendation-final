@@ -22,7 +22,13 @@ export default function ProfileMenu({ onClose, onNavigate }) {
           </div>
         ))}
         <div className="profile-menu-divider" />
-        <div className="profile-menu-item danger" onClick={onClose}>
+        <div
+          className="profile-menu-item danger"
+          onClick={() => {
+            onClose();
+            alert('You have been logged out.');
+          }}
+        >
           <span style={{ fontSize: 15 }}>⎋</span>
           <span>Logout</span>
         </div>

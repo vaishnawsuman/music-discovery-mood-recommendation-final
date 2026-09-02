@@ -3,8 +3,25 @@ __pycache__/
 *.py[cod]
 .venv/
 venv/
+env/
+
+# Environment variables
 .env
 
 # Node
 node_modules/
-dist/
+frontend/dist/
+
+# Python generated files
+*.pyc
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log

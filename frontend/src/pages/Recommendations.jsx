@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import SongRow from '../components/SongRow.jsx';
 import { usePlayer } from '../context/PlayerContext.jsx';
+import { getRecommendations } from '../services/api.js';
 
 const ANALYSIS_ICONS = {
   mood: '💭',
@@ -18,40 +19,25 @@ export default function Recommendations({ moodText, onBack }) {
   const [saved, setSaved] = useState(false);
 
   useEffect(() => {
-    const getRecommendations = async () => {
+    const fetchRecommendations = async () => {
       try {
         setLoading(true);
         setError('');
 
-        const response = await fetch('http://127.0.0.1:8000/recommend', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-            mood: moodText,
-          }),
-        });
-
-        if (!response.ok) {
-          throw new Error('Failed to get recommendations');
-        }
-
-        const data = await response.json();
-
-        console.log('API Response:', data);
-
+        const data = await getRecommendations(moodText);
         setResult(data);
       } catch (error) {
         console.error(error);
-        setError('Unable to generate playlist. Check your backend.');
+        setError(
+          error.message || 'Unable to generate playlist. Check your backend.'
+        );
       } finally {
         setLoading(false);
       }
     };
 
     if (moodText) {
-      getRecommendations();
+      fetchRecommendations();
     }
   }, [moodText]);
 
@@ -89,9 +75,10 @@ export default function Recommendations({ moodText, onBack }) {
     );
   }
 
-  const analysis = result?.analysis || {};
+  const analysis = result || {};
   const songs = result?.songs || [];
-  const why = result?.why || 'These songs match your mood.';
+  const why =
+    result?.playlist_description || 'These songs match your mood.';
 
   const analysisItems = [
     { key: 'mood', label: 'Mood', value: analysis.mood },
@@ -113,7 +100,6 @@ export default function Recommendations({ moodText, onBack }) {
 
   return (
     <div className="page-content fade-in">
-
       <button className="reco-back-btn" onClick={onBack}>
         ← Back
       </button>
@@ -144,7 +130,7 @@ export default function Recommendations({ moodText, onBack }) {
         </div>
 
         <div className="ai-analysis-grid">
-          {analysisItems.map(item => (
+          {analysisItems.map((item) => (
             <div key={item.key} className="ai-analysis-card">
               <div className="ai-analysis-icon">
                 {ANALYSIS_ICONS[item.key]}

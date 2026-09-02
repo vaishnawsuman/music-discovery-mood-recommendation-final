@@ -13,6 +13,7 @@ import RecentlyPlayed from './pages/RecentlyPlayed.jsx';
 import Genres from './pages/Genres.jsx';
 import Discover from './pages/Discover.jsx';
 import Profile from './pages/Profile.jsx';
+import Settings from './pages/Settings.jsx';
 import './styles.css';
 
 function AppShell() {
@@ -76,8 +77,9 @@ function AppShell() {
       case 'discover':
         return <Discover onNavigate={navigate} />;
       case 'profile':
-      case 'settings':
         return <Profile onNavigate={navigate} />;
+      case 'settings':
+        return <Settings onNavigate={navigate} />;
       default:
         return <Home onNavigate={navigate} onMoodGenerate={handleMoodGenerate} />;
     }
@@ -88,7 +90,6 @@ function AppShell() {
     if (currentPage === 'recommendations' || currentPage === 'mood-ai') return 'moodai';
     if (currentPage === 'playlists') return 'library';
     if (currentPage === 'recently-played') return 'recent';
-    if (currentPage === 'settings') return 'profile';
     return currentPage;
   };
 

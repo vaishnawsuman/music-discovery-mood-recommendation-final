@@ -95,7 +95,7 @@ export default function Sidebar({ currentPage, onNavigate }) {
             className="sidebar-profile-btn"
             onClick={() => setProfileOpen(o => !o)}
           >
-            <div className="sidebar-avatar">N</div>
+            <div className="sidebar-avatar">V</div>
             <div className="sidebar-profile-info">
               <div className="sidebar-profile-name">Viveka</div>
               <div className="sidebar-profile-sub">View Profile</div>
